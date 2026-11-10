@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brumdance — 3 em 1 (Black Friday)
 
-## Getting Started
+Página de vendas do pacote **Ballet + Jazz + Contemporâneo** da Brumdance, recriada a partir da página em WordPress (`brumdance.com.br/3em1`) em Next.js + Tailwind CSS, pronta para hospedar na Vercel.
 
-First, run the development server:
+## Editar textos, preços e links
+
+Toda a copy está em **[`src/content.ts`](src/content.ts)**:
+
+| O quê | Onde |
+| --- | --- |
+| Link do checkout Hotmart | `CHECKOUT_URL` |
+| Preço, desconto, fim da contagem regressiva, faixas | `PROMO` |
+| Topo da página | `topBar`, `hero`, `features` |
+| Demais seções | `video`, `forWhom`, `schools`, `ministry`, `bonuses`, `testimonials`, `offer`, `guarantee`, `faq`, `finalCta` |
+
+O link do checkout repassa automaticamente os parâmetros da URL (`utm_*`, `sck`, `src`…) para a Hotmart.
+
+A contagem regressiva some sozinha depois da data em `PROMO.endsAt`.
+
+## Rodar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Publicar na Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Em [vercel.com/new](https://vercel.com/new), importe este repositório.
+2. Deixe as configurações padrão (Next.js é detectado sozinho) e clique em **Deploy**.
+3. Opcional: defina `NEXT_PUBLIC_SITE_URL` com o domínio final (usado nas imagens de compartilhamento).
 
-## Learn More
+Cada `git push` na `main` publica uma nova versão automaticamente.
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/page.tsx` — layout de todas as seções
+- `src/app/globals.css` — cores da marca e efeitos (faixas, brilho, revelar ao rolar)
+- `src/components/` — checkout com UTM, vídeo do YouTube leve, contagem regressiva, faixa animada
+- `public/images/` — imagens baixadas do site original
+- `src/app/icon.png`, `apple-icon.png`, `favicon.ico` — ícones do site
