@@ -1,146 +1,222 @@
 // Toda a copy da página fica aqui — edite este arquivo para mudar textos, preços e links.
 
-// ⚠️ BLACK FRIDAY: troque pelo link da oferta de R$147 criada na Hotmart.
+export const PRODUCT = {
+  name: "Trilogia Essencial da Dança",
+  subtitle: "Ballet, Jazz e Contemporânea com BrumDance",
+  edition: "Nova edição",
+};
+
+// ⚠️ BLACK FRIDAY: troque pelo link da oferta de R$247 criada na Hotmart.
 // (o código "off=1cybajhg" abaixo é o da oferta antiga de R$397)
 export const CHECKOUT_URL =
   "https://pay.hotmart.com/B102786927K?off=1cybajhg&checkoutMode=10";
 
 export const PROMO = {
   label: "Black Friday",
-  from: "R$397",
-  to: "R$147",
-  discount: "63% OFF",
+  from: "R$1.191",
+  to: "R$247",
+  discount: "79% OFF",
   // Fim da contagem regressiva (horário de Brasília). Depois disso o contador some.
   endsAt: "2026-11-30T23:59:59-03:00",
-  ticker: ["Black Friday", "63% OFF", "3 escolas por R$147", "Ballet • Jazz • Contemporâneo", "Bônus exclusivos"],
+  ticker: ["Black Friday", "79% OFF", "Trilogia Essencial por R$247", "Ballet • Jazz • Contemporânea", "Nova edição"],
 };
 
 export const YOUTUBE_ID = "SK7Z7CLzB98";
 
 export const topBar = {
-  a: "BLACK FRIDAY Brumdance",
-  b: "3 escolas de R$397 por R$147",
-  c: "Menor preço que já fizemos!",
+  b: "Trilogia Essencial de R$1.191 por R$247",
+  c: "Nova edição • Só na Black Friday!",
 };
 
 export const hero = {
-  title: "Ballet + Jazz + Contemporâneo:",
-  highlight: "3 escolas pelo preço\u00a0de\u00a01.",
-  text: "20 min por dia. Progresso real em\u00a04\u00a0semanas.",
-  chip: "2 anos de acesso • Certificado • Aulas Bônus",
-  cta: "Garantir por R$147",
+  title: "Trilogia Essencial da Dança",
+  highlight: "Ballet, Jazz e Contemporânea",
+  text: "30 aulas para te levar do zero ao essencial na técnica + 6 aulas bônus.",
+  cta: "Garantir por R$247",
   under: "7 dias de garantia • Compra segura",
 };
 
 export const features = [
-  "Ballet, Jazz e Contemporâneo",
-  "Aulas curtas e detalhadas",
+  "30 aulas + 6 aulas bônus",
+  "10 aulas de cada modalidade",
+  "Do zero ao essencial na técnica",
+  "Planos de estudo de 3 a 10 meses",
   "2 anos de acesso + certificado",
-  "Celular, computador e TV",
-  "Trilha de Ministração",
 ];
 
 export const video = {
   title: "A jornada que destravou minha técnica e minha ministração,",
   highlight: "e vai destravar a sua.",
-  text: "Em poucos minutos, a Prof.ª Ana Brum explica por que tantas alunas travam (falta de base, medo de errar, rotina corrida) e como a metodologia Brumdance resolve isso com aulas curtas, trilhas por nível e uma metodologia clara.",
+  text: "Em poucos minutos, a Prof.ª Ana Brum explica por que tantas alunas travam (falta de base, medo de errar, rotina corrida) e como a metodologia Brumdance resolve isso com aulas claras, uma técnica por vez e um plano de estudo que cabe na sua rotina.",
   cta: "Quero aproveitar a Black Friday",
 };
 
 export const forWhom = {
   eyebrow: "Para quem é",
   title: "Descubra se a",
-  highlight: "Brumdance é para você",
+  highlight: "Trilogia é para você",
   yes: [
     "Iniciantes (ou quem está retornando) que desejam base sólida sem sair de casa.",
     "Ministras e líderes de dança que querem excelência técnica e segurança para ministrar.",
     "Bailarinas e professoras que querem aperfeiçoar seus conhecimentos em cada modalidade e entender novas formas de ensinar com segurança.",
   ],
   no: [
-    "Quem não pretende treinar ao menos 20 min/dia ou uma hora e meia por semana",
+    "Quem não pretende reservar ao menos uma aula por semana para treinar.",
     "Quem busca somente certificação sem estudo prático.",
   ],
 };
 
-const FORMATO = "aulas curtas (10–25 min), trilhas por nível.";
+export const schoolsIntro = {
+  tag: "30 aulas + 6 bônus",
+  title: "Por dentro da",
+  highlight: "Trilogia Essencial",
+};
 
 export const schools = [
   {
-    name: "Ballet",
+    name: "Ballet Essencial",
     image: "/images/ballet.webp",
-    items: [
-      "Barra e Centro: plié, tendu, relevé, rond de jambe, adágio e allegro",
-      "Linhas e Postura: braços, mãos, eixos, equilíbrio",
-      "Preparação Física e Mobilidade: alongamentos seguros e prevenção de lesões",
-      "Coreografia e Musicalidade: combinação progressiva aplicada",
+    lessons: "10 aulas + 2 aulas bônus",
+    topics: [
+      "Postura",
+      "Mãos e dedos",
+      "Posições de braços e pés",
+      "Plié",
+      "Tendu",
+      "Elevé",
+      "Relevé",
+      "Jeté",
+      "Rond de jambe",
+      "Relevé lent",
+      "Fondu",
+      "Dégagé",
+      "Transferências",
+      "Chassé",
+      "Retiré",
+      "Coupé",
+      "Passé com pequenos e grandes braços",
+      "Glissade",
+      "Pequenos saltos",
+      "Grand battement",
+      "Développé",
+      "Valsa (pas balancé)",
+      "Chaîné",
+      "Alongamento e fortalecimento",
+      "Coreografia",
     ],
-    format: FORMATO,
   },
   {
-    name: "Jazz",
+    name: "Jazz Essencial",
     image: "/images/jazz.webp",
-    items: [
-      "Fundamentos e Isolamentos (linha, precisão, musicalidade)",
-      "Passos-chave: step touch, step ball change, cross touch, giros e saltos",
-      "Combos e Criação: frases coreográficas semanais + interpretação",
+    lessons: "10 aulas + 2 aulas bônus",
+    topics: [
+      "Postura",
+      "Braços",
+      "Posições paralelas",
+      "Tendu",
+      "Elevé",
+      "Relevé",
+      "Catavento",
+      "Twist",
+      "Isolamentos de tronco",
+      "Kicks",
+      "Mergulhos",
+      "Pivot turn",
+      "Ball change",
+      "Step ball change",
+      "Retiré e preparação de pirueta",
+      "Higher kicks",
+      "Star jump",
+      "Hitch kick",
+      "Arc jump",
+      "Straight jump",
+      "Hitch hike",
+      "Slide",
+      "Compass turn",
+      "Chaîné",
+      "Alongamento e fortalecimento",
+      "Coreografia",
     ],
-    format: FORMATO,
   },
   {
-    name: "Dança Contemporânea",
+    name: "Contemporânea Essencial",
     image: "/images/danca-contemporanea.webp",
-    items: [
-      "Técnicas de Chão: quedas controladas, rolamentos, peso/contrapeso",
-      "Espirais e Reversões: fluidez, respiração e consciência corporal",
-      "Improvisação Guiada e Composição (intenção e emoção)",
+    lessons: "10 aulas + 2 aulas bônus",
+    topics: [
+      "Chão",
+      "Abdômen",
+      "Familiaridade com o chão",
+      "Cloches (legs swing)",
+      "Apoio ativo",
+      "Concha",
+      "Equilíbrio e desequilíbrio",
+      "Rolamento",
+      "Pêndulos",
+      "Espirais (spirals)",
+      "Torções (oppositions)",
+      "Slides",
+      "Cambalhotas (back roll)",
+      "Saltos (jumps)",
+      "Tombé (leg drop)",
+      "Ts (front, side e back T)",
     ],
-    format: FORMATO,
   },
 ];
 
-export const ministry = {
-  title: "Desmistificando a",
-  highlight: "Ministração Espontânea",
-  items: [
-    "Postura no altar: intenção, presença e comunicação não verbal",
-    "Entradas e saídas, leitura do ambiente",
-    "Expressão facial e olhar (congruência técnica + espiritualidade)",
-    "Dinâmicas de movimento e exercícios práticos de espontâneo",
-    "Dança no ministério e aplicação consciente",
-    "Uso de adereços: fita, lenço, fan-véu, asaflex (segurança e significado)",
-    "Significado das cores na ministração",
+export const studyPlans = {
+  tag: "Planos de estudo",
+  title: "Escolha o seu",
+  highlight: "ritmo de estudo",
+  intro: "Cada pessoa tem uma rotina. Por isso, a Trilogia vem com 4 caminhos prontos: é só escolher o seu e seguir.",
+  profiles: [
+    {
+      kind: "light",
+      title: "Pouca disciplina? Sem problema.",
+      subtitle: "Para quem tende a procrastinar e precisa de um plano simples.",
+      options: [
+        {
+          name: "As 3 modalidades toda semana",
+          text: "Faça uma aula de cada modalidade por semana (3 aulas por semana).",
+          duration: "3 meses",
+        },
+        {
+          name: "Uma modalidade por vez",
+          text: "Faça uma aula por semana de uma só modalidade antes de começar a próxima. Ex.: todas as aulas de ballet primeiro.",
+          duration: "8 meses",
+        },
+      ],
+    },
+    {
+      kind: "full",
+      title: "Quer evoluir de forma PLENA?",
+      subtitle: "Para quem é focada e quer dominar a proposta técnica de cada aula.",
+      options: [
+        {
+          name: "As 3 modalidades toda semana",
+          text: "Faça a aula 1 de cada modalidade toda semana durante um mês. No mês seguinte, faça o mesmo com a aula 2, e assim por diante.",
+          duration: "10 meses",
+        },
+        {
+          name: "Uma modalidade por vez",
+          text: "Escolha por qual começar e faça a aula 1 toda semana durante um mês; no mês seguinte, a aula 2. Termine a modalidade em 10 meses e siga para a próxima.",
+          duration: "2 anos e meio",
+        },
+      ],
+    },
   ],
-  result:
-    "técnica com propósito e ministração com excelência e respeito ao ambiente.",
+  note: "A repetição te leva ao entendimento pleno da proposta técnica de cada aula.",
 };
 
 export const bonuses = {
-  title: "Bônus Exclusivos",
-  highlight: "do Pacote Completo!",
+  title: "6 aulas bônus",
+  highlight: "na nova edição",
   items: [
-    {
-      tag: "Bônus #1",
-      title: "Plano de Treino Anual (Jazz/Ballet/Contemporâneo)",
-      text: "Calendário pronto + checklist de evolução.",
-    },
-    {
-      tag: "Bônus #2",
-      title: "Gravação de Aula Ao Vivo Especial",
-      text: "(Jazz e dança contemporânea)",
-    },
-    {
-      tag: "Bônus #3",
-      title: "Playlists/Trilhas Musicais",
-      text: "Para praticar combos em casa.",
-    },
-    {
-      tag: "Bônus #4",
-      title: "Consultoria Individual",
-      text: "Somente para as 5 primeiras.",
-    },
+    { tag: "+2 aulas", title: "Bônus de Ballet", text: "Duas aulas extras para aprofundar o Ballet Essencial." },
+    { tag: "+2 aulas", title: "Bônus de Jazz", text: "Duas aulas extras para aprofundar o Jazz Essencial." },
+    { tag: "+2 aulas", title: "Bônus de Contemporânea", text: "Duas aulas extras para aprofundar a Contemporânea Essencial." },
   ],
-  note: "Bônus disponíveis",
-  noteHighlight: "somente durante a Black Friday",
+  note: "Inclusas na",
+  noteHighlight: "Trilogia Essencial • Nova edição",
 };
 
 export const testimonials = {
@@ -160,25 +236,20 @@ export const offer = {
   title: "Tudo o que você",
   highlight: "recebe hoje:",
   items: [
-    { label: "Escola Ballet com Brumdance", price: "R$ 397" },
-    { label: "Escola Jazz com Brumdance", price: "R$ 397" },
-    { label: "Escola Dança Contemporânea com Brumdance", price: "R$ 397" },
-    { label: "Trilha Ministerial (comum às 3)", price: "R$ 197" },
-    { label: "Bônus #1: Plano de Treino anual", price: "R$ 67" },
-    { label: "Bônus #2: Gravação Aula ao Vivo de Jazz e Dança Contemporânea", price: "R$ 197" },
-    { label: "Bônus #3: Playlists/Trilhas", price: "R$ 27" },
-    { label: "Bônus #4: Consultoria Individual — somente 5 primeiras", price: "R$ 150" },
-    { label: "Acesso por 2 anos + Certificado", price: "Único no mercado" },
+    { label: "Ballet Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
+    { label: "Jazz Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
+    { label: "Contemporânea Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
+    { label: "4 planos de estudo prontos (de 3 meses a 2 anos e meio)", price: "Incluso" },
+    { label: "Acesso por 2 anos + Certificado", price: "Incluso" },
   ],
-  total: "R$ 2.029,00",
+  total: "R$ 1.191,00",
   // Parcelado: confira o valor exato da parcela no checkout da Hotmart.
   installment: "ou em até 12x no cartão",
-  cash: "R$147",
-  from: "R$397",
-  cta: "Quero as 3 escolas por R$147",
+  cash: "R$247",
+  cta: "Quero a Trilogia por R$247",
   under: "Garantia 7 dias • Acesso imediato • Pagamento seguro",
   question:
-    "Se tudo isso te ajudasse a ganhar postura e confiança nas próximas 4 semanas, valeria R$ 147?",
+    "Se tudo isso te ajudasse a ganhar postura e confiança nas próximas 4 semanas, valeria R$ 247?",
   question2: "E se te poupasse meses de dúvidas treinando sozinha, valeria?",
 };
 
@@ -192,9 +263,10 @@ export const guarantee = {
 };
 
 export const faq = [
-  { q: "Sou iniciante. Vou conseguir?", a: "Sim. As trilhas começam do zero e evoluem por etapa com aulas curtas." },
+  { q: "Sou iniciante. Vou conseguir?", a: "Sim. As 30 aulas te levam do zero ao essencial na técnica, uma etapa por vez." },
+  { q: "Quantas aulas são?", a: "30 aulas (10 de Ballet, 10 de Jazz e 10 de Contemporânea) + 6 aulas bônus, 2 de cada modalidade." },
+  { q: "Em quanto tempo eu termino?", a: "Depende do ritmo que você escolher: de 3 meses (uma aula de cada modalidade por semana) a 10 meses no plano pleno com as 3 modalidades juntas." },
   { q: "Preciso de muito espaço/equipamentos?", a: "Não. Há adaptações para sala/quarto e uma lista simples de acessórios opcionais." },
-  { q: "Quanto tempo por dia devo estudar?", a: "Recomendamos 20 min/dia ou 3x por semana." },
   { q: "Por quanto tempo terei acesso?", a: "2 anos a partir da compra." },
   { q: "Recebo certificado?", a: "Sim, certificado de conclusão ao finalizar as trilhas." },
   { q: "Consigo assistir no celular/TV/computador?", a: "Sim. A plataforma funciona no navegador e permite espelhar para TV." },
@@ -202,6 +274,6 @@ export const faq = [
 ];
 
 export const finalCta = {
-  cta: "3 escolas por R$147",
+  cta: "Trilogia Essencial por R$247",
   note: "Preço de Black Friday — nunca mais vai acontecer!",
 };

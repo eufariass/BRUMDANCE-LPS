@@ -16,7 +16,20 @@ function timeLeft(end: number): Left {
 }
 
 /** Contagem regressiva real até `endsAt`. Some sozinha quando a oferta acaba. */
-export function Countdown({ endsAt, center = false }: { endsAt: string; center?: boolean }) {
+export function Countdown({
+  endsAt,
+  center = false,
+  startAt = "md",
+  label = "A oferta Black Friday termina em",
+  boxClassName = "rounded-xl bg-black/70 ring-1 ring-pink/40",
+}: {
+  endsAt: string;
+  center?: boolean;
+  /** A partir de qual largura alinhar à esquerda (quando não centralizado). */
+  startAt?: "md" | "lg";
+  label?: string;
+  boxClassName?: string;
+}) {
   const [left, setLeft] = useState<Left | null>(null);
 
   useEffect(() => {
@@ -41,11 +54,11 @@ export function Countdown({ endsAt, center = false }: { endsAt: string; center?:
 
   return (
     <div className="mt-8">
-      <p className="text-xs font-bold uppercase tracking-[0.25em] text-lilac">A oferta Black Friday termina em</p>
-      <div className={`mt-3 flex justify-center gap-2 ${center ? "" : "md:justify-start"}`} role="timer" aria-live="off">
+      <p className="text-xs font-bold uppercase tracking-[0.25em] text-lilac">{label}</p>
+      <div className={`mt-3 flex justify-center gap-2 ${center ? "" : startAt === "lg" ? "lg:justify-start" : "md:justify-start"}`} role="timer" aria-live="off">
         {units.map(([label, v], i) => (
           <div key={label} className="flex items-center gap-2">
-            <div className="w-16 rounded-xl bg-black/70 py-2 text-center ring-1 ring-pink/40 backdrop-blur sm:w-[4.5rem]">
+            <div className={`w-16 py-2 text-center sm:w-[4.5rem] ${boxClassName}`}>
               <span className="block text-2xl font-bold tabular-nums sm:text-3xl">
                 {v === undefined ? "--" : String(v).padStart(2, "0")}
               </span>

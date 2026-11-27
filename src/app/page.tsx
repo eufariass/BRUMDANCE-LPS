@@ -1,29 +1,21 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import {
-  Activity,
   Award,
   CalendarDays,
   ChevronDown,
-  Church,
   CircleCheck,
   CircleX,
-  DoorOpen,
-  Eye,
+  Flame,
   Gift,
+  Hourglass,
   Layers,
   ListChecks,
   Lock,
-  MessagesSquare,
-  MonitorSmartphone,
-  Music,
-  Palette,
-  PersonStanding,
-  Ribbon,
+  Repeat,
   ShieldCheck,
   Sparkles,
-  Target,
-  Video,
+  Sprout,
   Zap,
 } from "lucide-react";
 import { CheckoutLink } from "@/components/checkout-link";
@@ -31,6 +23,7 @@ import { YouTubeLite } from "@/components/youtube-lite";
 import { Countdown } from "@/components/countdown";
 import { Marquee } from "@/components/marquee";
 import {
+  PRODUCT,
   PROMO,
   YOUTUBE_ID,
   bonuses,
@@ -40,9 +33,10 @@ import {
   forWhom,
   guarantee,
   hero,
-  ministry,
   offer,
   schools,
+  schoolsIntro,
+  studyPlans,
   testimonials,
   topBar,
   video,
@@ -109,9 +103,7 @@ function SectionTitle({ children, className = "" }: { children: ReactNode; class
   );
 }
 
-const featureIcons = [Layers, ListChecks, Award, MonitorSmartphone, Sparkles];
-const ministryIcons = [PersonStanding, DoorOpen, Eye, Activity, Church, Ribbon, Palette];
-const bonusIcons = [CalendarDays, Video, Music, MessagesSquare];
+const featureIcons = [Layers, ListChecks, Sparkles, CalendarDays, Award];
 
 export default function Home() {
   return (
@@ -146,13 +138,14 @@ export default function Home() {
               />
               <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-black px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-white shadow-[0_0_30px_-4px] shadow-pink/60 ring-1 ring-pink/60">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-pink" aria-hidden />
-                {PROMO.label} • {PROMO.discount}
+                {PRODUCT.edition} • {PROMO.label} • {PROMO.discount}
               </p>
               <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.05] tracking-tight sm:text-6xl">
                 {hero.title}
                 <br />
                 <span className="text-gradient">{hero.highlight}</span>
               </h1>
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.35em] text-white/60">com BrumDance</p>
               <p className="mt-4 text-lg text-white/80 sm:text-xl">{hero.text}</p>
               <div className="mt-6">
                 <p className="inline-flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1 rounded-2xl bg-black/70 px-6 py-3 ring-1 ring-pink/50 backdrop-blur">
@@ -257,39 +250,34 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* 3 ESCOLAS */}
+        {/* TRILOGIA: CONTEÚDO DAS AULAS */}
         <section className="relative overflow-hidden bg-black py-16 md:py-24">
           <Glows variant="b" />
           <Container>
-            <BfTag>3 escolas por {PROMO.to}</BfTag>
+            <BfTag>{schoolsIntro.tag}</BfTag>
             <SectionTitle>
-              Por dentro das <span className="text-gradient">3 Escolas</span>
+              {schoolsIntro.title} <span className="text-gradient">{schoolsIntro.highlight}</span>
             </SectionTitle>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {schools.map((s) => (
                 <article key={s.name} className={`reveal flex flex-col overflow-hidden ${card}`}>
                   <div className="relative">
-                    <Image src={s.image} alt={`Escola de ${s.name} com Brumdance`} width={600} height={338} className="h-auto w-full" />
+                    <Image src={s.image} alt={s.name} width={600} height={338} className="h-auto w-full" />
                     <span className="absolute left-3 top-3 rounded-full bg-black/80 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-pink ring-1 ring-pink/50">
-                      Incluída
+                      {s.lessons}
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-xl font-semibold">
-                      <span className="text-gradient">{s.name}</span> com Brumdance
-                    </h3>
-                    <p className="mt-3 text-sm font-medium text-white/60">Você vai aprender:</p>
-                    <ul className="mt-3 space-y-2.5 text-sm text-white/80">
-                      {s.items.map((it) => (
-                        <li key={it} className="flex gap-2">
-                          <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-orchid-light" aria-hidden />
-                          {it}
+                    <h3 className="text-gradient text-2xl font-semibold">{s.name}</h3>
+                    <p className="mt-1 text-sm text-white/60">Do zero ao essencial na técnica</p>
+                    <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-white/50">Conteúdo das aulas</p>
+                    <ul className="mt-3 flex flex-wrap gap-1.5">
+                      {s.topics.map((t) => (
+                        <li key={t} className="rounded-full bg-white/[0.06] px-2.5 py-1 text-xs text-white/80 ring-1 ring-white/10">
+                          {t}
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-auto pt-5 text-sm text-white/60">
-                      <strong className="text-white">Formato:</strong> {s.format}
-                    </p>
                   </div>
                 </article>
               ))}
@@ -297,35 +285,70 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* MINISTRAÇÃO */}
+        {/* PLANOS DE ESTUDO */}
         <section className="relative overflow-hidden bg-[#07040c] py-16 md:py-24">
           <div className="bf-dots pointer-events-none absolute inset-0 opacity-60" aria-hidden />
           <Glows />
           <Container>
+            <BfTag>{studyPlans.tag}</BfTag>
             <SectionTitle>
-              {ministry.title} <span className="text-gradient">{ministry.highlight}</span>
+              {studyPlans.title} <span className="text-gradient">{studyPlans.highlight}</span>
             </SectionTitle>
-            <ul className="mt-12 flex flex-wrap justify-center gap-4">
-              {ministry.items.map((it, i) => {
-                const Icon = ministryIcons[i];
+            <p className="reveal mx-auto mt-5 max-w-2xl text-center text-white/70 sm:text-lg">{studyPlans.intro}</p>
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              {studyPlans.profiles.map((p) => {
+                const full = p.kind === "full";
+                const Icon = full ? Flame : Sprout;
                 return (
-                  <li
-                    key={it}
-                    className={`reveal flex w-full items-center gap-4 rounded-2xl p-5 text-sm text-white/85 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.7rem)] ${card}`}
+                  <article
+                    key={p.title}
+                    className={`reveal relative flex flex-col rounded-3xl p-6 sm:p-8 ${
+                      full
+                        ? "bg-gradient-to-b from-[#1f0c33] to-black/60 shadow-[0_0_60px_-15px] shadow-pink/50 ring-1 ring-pink/50"
+                        : "bg-white/[0.04] ring-1 ring-white/10"
+                    }`}
                   >
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-orchid to-pink text-white shadow-lg shadow-pink/20">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </span>
-                    {it}
-                  </li>
+                    {full && (
+                      <span className="absolute -top-3 right-6 rounded-full bg-pink px-3 py-1 text-[10px] font-black uppercase tracking-widest">
+                        Evolução plena
+                      </span>
+                    )}
+                    <div className="flex items-start gap-4">
+                      <span
+                        className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${
+                          full ? "bg-gradient-to-br from-orchid to-pink" : "bg-white/10"
+                        }`}
+                      >
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <div>
+                        <h3 className="text-xl font-semibold sm:text-2xl">{p.title}</h3>
+                        <p className="mt-1 text-sm text-white/60">{p.subtitle}</p>
+                      </div>
+                    </div>
+                    <ol className="mt-6 space-y-4">
+                      {p.options.map((o, i) => (
+                        <li key={o.name} className="rounded-2xl bg-black/40 p-5 ring-1 ring-white/10">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-lilac">
+                              Opção {i + 1} • {o.name}
+                            </p>
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-orchid/30 to-pink/30 px-3 py-1 text-sm font-bold ring-1 ring-pink/40">
+                              <Hourglass className="h-3.5 w-3.5 text-pink" aria-hidden />
+                              {o.duration}
+                            </span>
+                          </div>
+                          <p className="mt-3 text-sm text-white/80 sm:text-base">{o.text}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  </article>
                 );
               })}
-            </ul>
+            </div>
             <p className="reveal mx-auto mt-10 flex max-w-3xl items-start gap-3 rounded-2xl bg-gradient-to-r from-orchid/25 to-pink/20 p-6 ring-1 ring-pink/30 sm:items-center">
-              <Target className="h-6 w-6 shrink-0 text-pink" aria-hidden />
-              <span>
-                <strong>Resultado esperado:</strong> {ministry.result}
-              </span>
+              <Repeat className="h-6 w-6 shrink-0 text-pink" aria-hidden />
+              <span>{studyPlans.note}</span>
             </p>
           </Container>
         </section>
@@ -337,16 +360,16 @@ export default function Home() {
           <Glows variant="b" />
           <Container>
             <BfTag>
-              <Gift className="h-3.5 w-3.5" aria-hidden /> Só na {PROMO.label}
+              <Gift className="h-3.5 w-3.5" aria-hidden /> {PRODUCT.edition}
             </BfTag>
             <SectionTitle>
               {bonuses.title} <span className="text-gradient">{bonuses.highlight}</span>
             </SectionTitle>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {bonuses.items.map((b, i) => {
-                const Icon = bonusIcons[i];
+            <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-3">
+              {bonuses.items.map((b) => {
+                const Icon = Gift;
                 return (
-                  <article key={b.tag} className={`reveal relative p-6 ${card}`}>
+                  <article key={b.title} className={`reveal relative p-6 ${card}`}>
                     <span className="inline-block rounded-full bg-gradient-to-r from-orchid to-pink px-3 py-1 text-xs font-black uppercase tracking-wide">
                       {b.tag}
                     </span>
@@ -420,9 +443,7 @@ export default function Home() {
               <p className="text-lg text-white/70">
                 Valor somado: <s className="text-[#ff4e4e]">{offer.total}</s>
               </p>
-              <p className="mt-2 text-lg text-white/70">
-                De <s className="text-[#ff4e4e]">{offer.from}</s> por apenas:
-              </p>
+              <p className="mt-2 text-lg text-white/70">Só na {PROMO.label}, por apenas:</p>
               <p className="text-gradient mt-2 text-7xl font-black tracking-tight sm:text-8xl">{offer.cash}</p>
               <p className="mt-1 text-lg text-white/70">à vista • {offer.installment}</p>
               <CheckoutLink className={`${btn} mt-8 px-12 py-5 text-base`}>

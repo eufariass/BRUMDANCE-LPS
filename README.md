@@ -1,8 +1,17 @@
-# Brumdance — 3 em 1 (Black Friday)
+# BrumDance — Trilogia Essencial da Dança (Black Friday)
 
-Página de vendas do pacote **Ballet + Jazz + Contemporâneo** da Brumdance, recriada a partir da página em WordPress (`brumdance.com.br/3em1`) em Next.js + Tailwind CSS, pronta para hospedar na Vercel.
+Página de vendas da **Trilogia Essencial da Dança — Ballet, Jazz e Contemporânea com BrumDance** (nova edição), recriada a partir da página em WordPress (`brumdance.com.br/3em1`) em Next.js + Tailwind CSS, pronta para hospedar na Vercel.
 
-## Editar textos, preços e links
+## Páginas
+
+| Rota | Página | Copy em |
+| --- | --- | --- |
+| `/` | Trilogia Essencial da Dança — Black Friday (R$247) | `src/content.ts` |
+| `/ballet-infantil` | Ballet Kids — lançamento Black Friday | `src/content-kids.ts` |
+
+No `src/content-kids.ts`, os itens marcados com `CONFIRMAR` (preço, idade, bônus, tempo de acesso e link do checkout) precisam ser ajustados ao produto real antes de publicar. Enquanto `KIDS_CHECKOUT_URL` estiver vazio, os botões de compra rolam até a oferta.
+
+## Editar textos, preços e links (Trilogia)
 
 Toda a copy está em **[`src/content.ts`](src/content.ts)**:
 

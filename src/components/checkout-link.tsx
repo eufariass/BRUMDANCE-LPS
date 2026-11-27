@@ -17,14 +17,24 @@ function withTracking(base: string) {
  * Link para o checkout da Hotmart que repassa o rastreamento da campanha,
  * igual ao comportamento do site WordPress.
  */
-export function CheckoutLink({ className, children }: { className?: string; children: ReactNode }) {
+export function CheckoutLink({
+  className,
+  children,
+  href = CHECKOUT_URL,
+}: {
+  className?: string;
+  children: ReactNode;
+  /** Link do checkout. Se vazio, o botão rola até a seção #oferta. */
+  href?: string;
+}) {
+  const target = href || "#oferta";
   const update = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.currentTarget.href = withTracking(CHECKOUT_URL);
+    if (target.startsWith("http")) e.currentTarget.href = withTracking(target);
   };
 
   return (
     <a
-      href={CHECKOUT_URL}
+      href={target}
       className={className}
       rel="noopener"
       onPointerDown={update}
