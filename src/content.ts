@@ -6,10 +6,8 @@ export const PRODUCT = {
   edition: "Nova edição",
 };
 
-// ⚠️ BLACK FRIDAY: troque pelo link da oferta de R$247 criada na Hotmart.
-// (o código "off=1cybajhg" abaixo é o da oferta antiga de R$397)
-export const CHECKOUT_URL =
-  "https://pay.hotmart.com/B102786927K?off=1cybajhg&checkoutMode=10";
+// Checkout Hotmart da Trilogia Essencial (Nova Edição) — R$247 na Black Friday.
+export const CHECKOUT_URL = "https://pay.hotmart.com/G108692295A";
 
 export const PROMO = {
   label: "Black Friday",
