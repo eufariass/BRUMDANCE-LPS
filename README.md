@@ -20,7 +20,7 @@ Toda a copy está em **[`src/content.ts`](src/content.ts)**:
 | Link do checkout Hotmart | `CHECKOUT_URL` |
 | Preço, desconto, fim da contagem regressiva, faixas | `PROMO` |
 | Topo da página | `topBar`, `hero`, `features` |
-| Demais seções | `video`, `forWhom`, `schools`, `ministry`, `bonuses`, `testimonials`, `offer`, `guarantee`, `faq`, `finalCta` |
+| Demais seções | `video`, `forWhom`, `schoolsIntro`, `schools`, `studyPlans`, `bonuses`, `testimonials`, `offer`, `guarantee`, `faq`, `finalCta` |
 
 O link do checkout repassa automaticamente os parâmetros da URL (`utm_*`, `sck`, `src`…) para a Hotmart.
 

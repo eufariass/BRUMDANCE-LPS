@@ -21,7 +21,8 @@ export const PROMO = {
   ticker: ["Black Friday", "79% OFF", "Trilogia Essencial por R$247", "Ballet • Jazz • Contemporânea", "Nova edição"],
 };
 
-export const YOUTUBE_ID = "SK7Z7CLzB98";
+// VSL (vídeo de vendas) da Trilogia — https://youtu.be/U5xyR5HlHZs
+export const YOUTUBE_ID = "U5xyR5HlHZs";
 
 export const topBar = {
   b: "Trilogia Essencial de R$1.191 por R$247",
@@ -31,13 +32,13 @@ export const topBar = {
 export const hero = {
   title: "Trilogia Essencial da Dança",
   highlight: "Ballet, Jazz e Contemporânea",
-  text: "30 aulas para te levar do zero ao essencial na técnica + 6 aulas bônus.",
+  text: "30 aulas para te levar do zero ao essencial na técnica + 4 aulas bônus.",
   cta: "Garantir por R$247",
   under: "7 dias de garantia • Compra segura",
 };
 
 export const features = [
-  "30 aulas + 6 aulas bônus",
+  "30 aulas + 4 aulas bônus",
   "10 aulas de cada modalidade",
   "Do zero ao essencial na técnica",
   "Planos de estudo de 3 a 10 meses",
@@ -67,7 +68,7 @@ export const forWhom = {
 };
 
 export const schoolsIntro = {
-  tag: "30 aulas + 6 bônus",
+  tag: "30 aulas + 4 bônus",
   title: "Por dentro da",
   highlight: "Trilogia Essencial",
 };
@@ -76,7 +77,7 @@ export const schools = [
   {
     name: "Ballet Essencial",
     image: "/images/ballet.webp",
-    lessons: "10 aulas + 2 aulas bônus",
+    lessons: "10 aulas",
     topics: [
       "Postura",
       "Mãos e dedos",
@@ -108,7 +109,7 @@ export const schools = [
   {
     name: "Jazz Essencial",
     image: "/images/jazz.webp",
-    lessons: "10 aulas + 2 aulas bônus",
+    lessons: "10 aulas",
     topics: [
       "Postura",
       "Braços",
@@ -141,7 +142,7 @@ export const schools = [
   {
     name: "Contemporânea Essencial",
     image: "/images/danca-contemporanea.webp",
-    lessons: "10 aulas + 2 aulas bônus",
+    lessons: "10 aulas",
     topics: [
       "Chão",
       "Abdômen",
@@ -208,12 +209,11 @@ export const studyPlans = {
 };
 
 export const bonuses = {
-  title: "6 aulas bônus",
+  title: "4 aulas bônus",
   highlight: "na nova edição",
   items: [
-    { tag: "+2 aulas", title: "Bônus de Ballet", text: "Duas aulas extras para aprofundar o Ballet Essencial." },
-    { tag: "+2 aulas", title: "Bônus de Jazz", text: "Duas aulas extras para aprofundar o Jazz Essencial." },
-    { tag: "+2 aulas", title: "Bônus de Contemporânea", text: "Duas aulas extras para aprofundar a Contemporânea Essencial." },
+    { tag: "1 aula", title: "Fortalecimento e Alongamento", text: "Para ganhar força e flexibilidade com segurança." },
+    { tag: "3 aulas", title: "Sequência Coreográfica", text: "Para colocar a técnica em prática e dançar." },
   ],
   note: "Inclusas na",
   noteHighlight: "Trilogia Essencial • Nova edição",
@@ -236,9 +236,10 @@ export const offer = {
   title: "Tudo o que você",
   highlight: "recebe hoje:",
   items: [
-    { label: "Ballet Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
-    { label: "Jazz Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
-    { label: "Contemporânea Essencial: 10 aulas + 2 aulas bônus", price: "R$ 397" },
+    { label: "Ballet Essencial: 10 aulas", price: "R$ 397" },
+    { label: "Jazz Essencial: 10 aulas", price: "R$ 397" },
+    { label: "Contemporânea Essencial: 10 aulas", price: "R$ 397" },
+    { label: "4 aulas bônus: Fortalecimento e Alongamento + 3 de Sequência Coreográfica", price: "Incluso" },
     { label: "4 planos de estudo prontos (de 3 meses a 2 anos e meio)", price: "Incluso" },
     { label: "Acesso por 2 anos + Certificado", price: "Incluso" },
   ],
@@ -264,7 +265,7 @@ export const guarantee = {
 
 export const faq = [
   { q: "Sou iniciante. Vou conseguir?", a: "Sim. As 30 aulas te levam do zero ao essencial na técnica, uma etapa por vez." },
-  { q: "Quantas aulas são?", a: "30 aulas (10 de Ballet, 10 de Jazz e 10 de Contemporânea) + 6 aulas bônus, 2 de cada modalidade." },
+  { q: "Quantas aulas são?", a: "30 aulas (10 de Ballet, 10 de Jazz e 10 de Contemporânea) + 4 aulas bônus: 1 de fortalecimento e alongamento e 3 de sequência coreográfica." },
   { q: "Em quanto tempo eu termino?", a: "Depende do ritmo que você escolher: de 3 meses (uma aula de cada modalidade por semana) a 10 meses no plano pleno com as 3 modalidades juntas." },
   { q: "Preciso de muito espaço/equipamentos?", a: "Não. Há adaptações para sala/quarto e uma lista simples de acessórios opcionais." },
   { q: "Por quanto tempo terei acesso?", a: "2 anos a partir da compra." },

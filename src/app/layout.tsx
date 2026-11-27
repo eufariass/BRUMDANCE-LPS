@@ -9,7 +9,7 @@ const rethink = Rethink_Sans({
 });
 
 const description =
-  "Trilogia Essencial da Dança — Ballet, Jazz e Contemporânea com BrumDance. Nova edição: 30 aulas do zero ao essencial na técnica + 6 aulas bônus. Black Friday: de R$1.191 por R$247.";
+  "Trilogia Essencial da Dança — Ballet, Jazz e Contemporânea com BrumDance. Nova edição: 30 aulas do zero ao essencial na técnica + 4 aulas bônus. Black Friday: de R$1.191 por R$247.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://brumdance.com.br"),

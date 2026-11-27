@@ -6,12 +6,14 @@ import {
   ChevronDown,
   CircleCheck,
   CircleX,
+  Dumbbell,
   Flame,
   Gift,
   Hourglass,
   Layers,
   ListChecks,
   Lock,
+  Music,
   Repeat,
   ShieldCheck,
   Sparkles,
@@ -104,6 +106,7 @@ function SectionTitle({ children, className = "" }: { children: ReactNode; class
 }
 
 const featureIcons = [Layers, ListChecks, Sparkles, CalendarDays, Award];
+const bonusIcons = [Dumbbell, Music];
 
 export default function Home() {
   return (
@@ -365,9 +368,9 @@ export default function Home() {
             <SectionTitle>
               {bonuses.title} <span className="text-gradient">{bonuses.highlight}</span>
             </SectionTitle>
-            <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-3">
-              {bonuses.items.map((b) => {
-                const Icon = Gift;
+            <div className="mx-auto mt-12 grid max-w-3xl gap-5 sm:grid-cols-2">
+              {bonuses.items.map((b, i) => {
+                const Icon = bonusIcons[i] ?? Gift;
                 return (
                   <article key={b.title} className={`reveal relative p-6 ${card}`}>
                     <span className="inline-block rounded-full bg-gradient-to-r from-orchid to-pink px-3 py-1 text-xs font-black uppercase tracking-wide">
