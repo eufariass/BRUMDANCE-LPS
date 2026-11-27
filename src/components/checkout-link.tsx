@@ -2,6 +2,7 @@
 
 import type { MouseEvent, ReactNode } from "react";
 import { CHECKOUT_URL } from "@/content";
+import { trackInitiateCheckout } from "@/tracking";
 
 /** Junta os parâmetros da URL atual (utm_*, sck, src, xcod...) ao link do checkout. */
 function withTracking(base: string) {
@@ -31,6 +32,10 @@ export function CheckoutLink({
   const update = (e: MouseEvent<HTMLAnchorElement>) => {
     if (target.startsWith("http")) e.currentTarget.href = withTracking(target);
   };
+  const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    update(e);
+    if (target.startsWith("http")) trackInitiateCheckout(e.currentTarget.href);
+  };
 
   return (
     <a
@@ -38,7 +43,7 @@ export function CheckoutLink({
       className={className}
       rel="noopener"
       onPointerDown={update}
-      onClick={update}
+      onClick={onClick}
       onContextMenu={update}
     >
       {children}

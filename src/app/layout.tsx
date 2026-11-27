@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Rethink_Sans } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@/components/analytics";
 
 const rethink = Rethink_Sans({
   variable: "--font-rethink",
@@ -33,7 +34,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${rethink.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }
