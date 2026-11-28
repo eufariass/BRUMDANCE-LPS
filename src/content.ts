@@ -74,7 +74,7 @@ export const schoolsIntro = {
 export const schools = [
   {
     name: "Ballet Essencial",
-    image: "/images/ballet.webp",
+    image: "/images/ballet-essencial.webp",
     lessons: "10 aulas",
     topics: [
       "Postura",
@@ -106,7 +106,7 @@ export const schools = [
   },
   {
     name: "Jazz Essencial",
-    image: "/images/jazz.webp",
+    image: "/images/jazz-essencial.webp",
     lessons: "10 aulas",
     topics: [
       "Postura",
@@ -139,7 +139,7 @@ export const schools = [
   },
   {
     name: "Contemporânea Essencial",
-    image: "/images/danca-contemporanea.webp",
+    image: "/images/contemporanea-essencial.webp",
     lessons: "10 aulas",
     topics: [
       "Chão",

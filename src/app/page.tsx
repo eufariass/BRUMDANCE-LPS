@@ -265,7 +265,7 @@ export default function Home() {
               {schools.map((s) => (
                 <article key={s.name} className={`reveal flex flex-col overflow-hidden ${card}`}>
                   <div className="relative">
-                    <Image src={s.image} alt={s.name} width={600} height={338} className="h-auto w-full" />
+                    <Image src={s.image} alt={`${s.name} — Nova edição`} width={1200} height={675} sizes="(min-width: 768px) 33vw, 100vw" className="h-auto w-full" />
                     <span className="absolute left-3 top-3 rounded-full bg-black/80 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-pink ring-1 ring-pink/50">
                       {s.lessons}
                     </span>
